@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient Explorer</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+
+        <button onclick="openModal('become-creator-modal')">Become a Creator</button>
+        <button onclick="openModal('become-supplier-modal')">Become a Supplier</button>
+        <button onclick="openModal('signup-modal')">Sign Up</button>
+        <button onclick="openModal('signin-modal')">Sign In</button>
+    </div>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+
+    <header>
+        <h1>INGREDIENT EXPLORER</h1>
+        <p>For Foodies and Creators</p>
+    </header>
+
+    <!-- Become a Creator Modal -->
+    <div id="become-creator-modal" class="modal">
+        <div class="modal-content">
+            <h2>Become a Creator</h2>
+            <p>Join our community of food creators and share your recipes with the world!</p>
+            <input type="text" placeholder="Creator Name" id="creator-name">
+            <input type="email" placeholder="Email" id="creator-email">
+            <input type="password" placeholder="Password" id="creator-password">
+            <button onclick="becomeCreator()">Submit</button>
+            <button onclick="closeModal('become-creator-modal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Become a Supplier Modal -->
+    <div id="become-supplier-modal" class="modal">
+        <div class="modal-content">
+            <h2>Become a Supplier</h2>
+            <p>Partner with us to supply high-quality ingredients and kitchen tools!</p>
+            <input type="text" placeholder="Supplier Name" id="supplier-name">
+            <input type="email" placeholder="Email" id="supplier-email">
+            <input type="password" placeholder="Password" id="supplier-password">
+            <button onclick="becomeSupplier()">Submit</button>
+            <button onclick="closeModal('become-supplier-modal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="User Name" id="signup-name">
+            <input type="email" placeholder="Email" id="signup-email">
+            <input type="password" placeholder="Password" id="signup-password">
+            <button onclick="signUp()">Sign Up</button>
+            <button onclick="closeModal('signup-modal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signin-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sign In</h2>
+            <input type="email" placeholder="Email" id="signin-email">
+            <input type="password" placeholder="Password" id="signin-password">
+            <button onclick="signIn()">Sign In</button>
+            <button onclick="closeModal('signin-modal')">Close</button>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#recipes">Recipes</a>
+        <a href="#diet-plans">Diet Plans</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#creators">Creators</a>
+        <a href="#suppliers">Suppliers</a>
+    </nav>
+
+    <div class="container">
+        <!-- Recipes Section -->
+        <div class="section" id="recipes">
+            <h2>Recipes</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://i0.wp.com/blog.blueapron.com/wp-content/uploads/2022/09/image.png?resize=620%2C620&ssl=1" alt="Non-Veg">
+                    <h3>Non-Veg</h3>
+                    <p>Explore delicious non-vegetarian recipes.</p>
+                </div>
+                <div class="card">
+                    <img src="https://static.toiimg.com/thumb/61361358.cms?width=1600&height=900&imgsize=26572" alt="Veg">
+                    <h3>Veg</h3>
+                    <p>Discover tasty vegetarian dishes.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.feastingathome.com/wp-content/uploads/2020/01/Chimichurri-Cauliflower-Bowls-15.jpg" alt="Vegan">
+                    <h3>Vegan</h3>
+                    <p>Try out amazing vegan recipes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diet Plans Section -->
+        <div class="section" id="diet-plans">
+            <h2>Diet Plans</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/191101102722-vegan-diet-stock.jpg?q=w_3000,h_2002,x_0,y_0,c_fill" alt="Vegan Diet">
+                    <h3>Vegan Diet</h3>
+                    <p>Healthy and sustainable vegan diet plans.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.natashamohan.com/wp-content/uploads/2024/12/Gym-Diet-Plan-for-Weight-Loss-scaled.webp" alt="Gym Diet">
+                    <h3>Gym Diet</h3>
+                    <p>Diet plans for fitness enthusiasts.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.eatingwell.com/thmb/arGCHAgAXVEPijrbSQ63nc5hihk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/EW-Meal-Plans-Healthy-Weight-Gain-Day-4-1x1-alt-81577102cff74485ac146541976d8b22.jpg" alt="Weight Gain Diet">
+                    <h3>Weight Gain Diet</h3>
+                    <p>Plans to help you gain weight healthily.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.eatingwell.com/thmb/toa6tI-wLmgsEf4IfQQbwmq8fDg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/EW-Group-Meal-Plans-Day-06-3x2-d8909c6f293a4464917cdb35e443bb88.jpg" alt="Weight Loss Diet">
+                    <h3>Weight Loss Diet</h3>
+                    <p>Effective plans for weight loss.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blogs Section -->
+        <div class="section" id="blogs">
+            <h2>Blogs</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://media.istockphoto.com/id/1241881284/photo/hands-of-cook-photographing-mexican-tacos.jpg?s=612x612&w=0&k=20&c=zFkJ71PlN32cgEpEiuKxVwb5f89fZoI9xt4xfyRhQUM=" alt="Blog 1">
+                    <h3>Latest Food Trends</h3>
+                    <p>Stay updated with the latest food trends.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.elcaminohealth.org/sites/default/files/styles/2_1__600x300/public/2019-05/healthy-eating2-1100x355.jpg?h=12f2e28f&itok=nNQHYDH7" alt="Blog 2">
+                    <h3>Healthy Eating Tips</h3>
+                    <p>Learn how to eat healthy and stay fit.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creators Section -->
+        <div class="section" id="creators">
+            <h2>Creators</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://www.ecoleducasse.com/application/files/6716/8410/2706/How_much_can_a_culinary_chef_make.jpg" alt="Creator 1">
+                    <h3>Meet Our Chefs</h3>
+                    <p>Learn from the best chefs in the industry.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.shutterstock.com/image-vector/restaurant-chef-cooks-group-kitchen-600nw-2418740699.jpg" alt="Creator 2">
+                    <h3>Join Our Community</h3>
+                    <p>Connect with food creators worldwide.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suppliers Section -->
+        <div class="section" id="suppliers">
+            <h2>Suppliers</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://www.globaldata.com/Uploads/WebinarImages/f7f22f4d-1229-451e-93db-ffd248a80c9a.jpeg" alt="Supplier 1">
+                    <h3>Organic Ingredients</h3>
+                    <p>Source high-quality organic ingredients.</p>
+                </div>
+                <div class="card">
+                    <img src="https://t4.ftcdn.net/jpg/03/50/48/77/360_F_350487776_shNiAVqcpO7M7VVwDCJF4tyPcQXyhCZP.jpg" alt="Supplier 2">
+                    <h3>Kitchen Tools</h3>
+                    <p>Find the best tools for your kitchen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Ingredient Explorer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to toggle sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+
+        // Function to open modals
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+        }
+
+        // Function to close modals
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Function to handle Become a Creator
+        function becomeCreator() {
+            const name = document.getElementById("creator-name").value;
+            const email = document.getElementById("creator-email").value;
+            alert(`Thank you, ${name}! We'll contact you at ${email} to get started.`);
+            closeModal('become-creator-modal');
+        }
+
+        // Function to handle Become a Supplier
+        function becomeSupplier() {
+            const name = document.getElementById("supplier-name").value;
+            const email = document.getElementById("supplier-email").value;
+            alert(`Thank you, ${name}! We'll contact you at ${email} to discuss partnership opportunities.`);
+            closeModal('become-supplier-modal');
+        }
+
+        // Function to handle Sign Up
+        function signUp() {
+            const name = document.getElementById("signup-name").value;
+            const email = document.getElementById("signup-email").value;
+            const password = document.getElementById("signup-password").value;
+            alert(`Sign Up Successful!\nName: ${name}\nEmail: ${email}`);
+            closeModal('signup-modal');
+        }
+
+        // Function to handle Sign In
+        function signIn() {
+            const email = document.getElementById("signin-email").value;
+            const password = document.getElementById("signin-password").value;
+            alert(`Sign In Successful!\nEmail: ${email}`);
+            closeModal('signin-modal');
+        }
+    </script>
+
+</body>
+</html>
